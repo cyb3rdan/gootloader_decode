@@ -10,10 +10,14 @@ for lines in jsfile:
     if len(line) > 1000:
         cleaned_js = ";".join(line.split(";")[1:-3:])
         obfuscated_js = (js2py.eval_js(cleaned_js))
+        #print (obfuscated_js)
         interesting = (obfuscated_js[::-1][::4])
         domains = re.findall(re_pattern,interesting)
         for domain in domains:
-            print ("[*] Potential domain: " + domain)
+            if "edoCrahCmorf" in domain or "peels" in domain:
+                break
+            else:
+                print ("[*] Potential domain: " + domain)
 
 # Transformations
 # print ("START")
