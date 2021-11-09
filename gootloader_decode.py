@@ -12,6 +12,7 @@ for lines in jsfile:
         obfuscated_js = (js2py.eval_js(cleaned_js))
         #print (obfuscated_js)
         interesting = (obfuscated_js[::-1][::4])
+        #interesting = (obfuscated_js[3::4][::-1])
         domains = re.findall(re_pattern,interesting)
         for domain in domains:
             if "edoCrahCmorf" in domain or "peels" in domain:
@@ -22,6 +23,8 @@ for lines in jsfile:
 # Transformations
 # interesting = obfuscated_js
 # print ("START")
+# print (interesting[3::4][::-1])
+# print ("----")
 # print (interesting[::-1][::2])
 # print ("----")
 # print (interesting[::-1][1::2])
