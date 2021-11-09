@@ -20,6 +20,7 @@ for lines in jsfile:
                 print ("[*] Potential domain: " + domain)
 
 # Transformations
+# interesting = obfuscated_js
 # print ("START")
 # print (interesting[::-1][::2])
 # print ("----")
